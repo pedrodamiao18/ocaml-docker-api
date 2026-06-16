@@ -1,0 +1,17 @@
+{
+  "name": "ocaml-docker",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "opam",
+  "workspaceFolder": "/workspaces/ocaml-docker",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ocamllabs.ocaml-platform"
+      ]
+    }
+  },
+  "postCreateCommand": "make build"
+}
