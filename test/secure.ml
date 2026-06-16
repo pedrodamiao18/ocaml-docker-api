@@ -1,5 +1,5 @@
 
-let ls () =
+let () =
   Common.install_image "alpine" ~tag:"latest";
   let c = Docker.Container.create "alpine:latest" ["uname"; "-a"]
             ~name:"test" ~open_stdin:true in

@@ -216,6 +216,7 @@ let read_response fn_name fd =
   else if status >= 500 then (
       (* In case of error 500, the body may provide an explanation... but
        it may also stall the whole computation so do not read it. *)
+      Debug.log 2 "read_response" "Body: %s" (read_exactly fd (int_of_string (Option.get (get_header "Content-Length" h))));
       Unix.close fd;
       raise(Server_error fn_name);
     )
